@@ -1,0 +1,30 @@
+name: device_id
+description: Flutter plugin for getting device id.
+version: 1.0.0
+
+homepage: https://cruv.dev/
+repository: https://github.com/cruvdev/device_id/
+issue_tracker: https://github.com/cruvdev/device_id/issues/
+
+environment:
+  sdk: ^3.5.1
+  flutter: '>=3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: dev.cruv.device_id
+        pluginClass: DeviceIdPlugin
+      ios:
+        pluginClass: DeviceIdPlugin

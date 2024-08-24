@@ -1,0 +1,26 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    - unnecessary_const
+    - always_declare_return_types
+    - always_put_control_body_on_new_line
+    - annotate_overrides
+    - avoid_annotating_with_dynamic
+    - omit_local_variable_types
+    - use_super_parameters
+    - always_use_package_imports
+    - require_trailing_commas
+    - avoid_void_async
+    - await_only_futures
+    - unawaited_futures
+
+analyzer:
+  exclude:
+    - '**/*.g.dart'
+    - '**/*.freezed.dart'
+    - '**/generated_plugin_registrant.dart'
+    - 'bricks/*/__brick__/**'
+    - analysis_options.yaml
+  errors:
+    invalid_annotation_target: ignore
