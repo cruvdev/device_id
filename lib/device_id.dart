@@ -1,11 +1,13 @@
 import 'package:device_id/device_id_platform_interface.dart';
 
 class DeviceId {
-  Future<String?> getPlatformVersion() {
+  const DeviceId._();
+
+  static Future<String?> get getPlatformVersion {
     return DeviceIdPlatform.instance.getPlatformVersion();
   }
 
-  Future<String?> getDeviceId() {
+  static Future<String?> get getId {
     return DeviceIdPlatform.instance.getDeviceId();
   }
 }

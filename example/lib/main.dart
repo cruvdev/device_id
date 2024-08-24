@@ -15,7 +15,6 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown', _deviceId = 'Unknown';
-  final _deviceIdPlugin = DeviceId();
 
   @override
   void initState() {
@@ -27,15 +26,14 @@ class _MyAppState extends State<MyApp> {
     String platformVersion, deviceId;
 
     try {
-      platformVersion = await _deviceIdPlugin.getPlatformVersion() ??
-          'Unknown platform version';
+      platformVersion =
+          await DeviceId.getPlatformVersion ?? 'Unknown platform version';
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
 
     try {
-      deviceId = await _deviceIdPlugin.getDeviceId() ??
-          'Unknown device id';
+      deviceId = await DeviceId.getId ?? 'Unknown device id';
     } on PlatformException {
       deviceId = 'Failed to get device id.';
     }

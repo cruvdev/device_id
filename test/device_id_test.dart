@@ -7,10 +7,9 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 class MockDeviceIdPlatform
     with MockPlatformInterfaceMixin
     implements DeviceIdPlatform {
-
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
-  
+
   @override
   Future<String?> getDeviceId() => Future.value('1234567890');
 }
@@ -23,18 +22,16 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-    var deviceIdPlugin = DeviceId();
     var fakePlatform = MockDeviceIdPlatform();
     DeviceIdPlatform.instance = fakePlatform;
 
-    expect(await deviceIdPlugin.getPlatformVersion(), '42');
+    expect(await DeviceId.getPlatformVersion, '42');
   });
 
   test('getDeviceId', () async {
-    var deviceIdPlugin = DeviceId();
     var fakePlatform = MockDeviceIdPlatform();
     DeviceIdPlatform.instance = fakePlatform;
 
-    expect(await deviceIdPlugin.getDeviceId(), '1234567890');
+    expect(await DeviceId.getId, '1234567890');
   });
 }

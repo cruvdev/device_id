@@ -24,28 +24,27 @@ import 'package:device_id/device_id.dart';
 Then you can use the following code to get the device id:
 
 ```dart
-String _identifier = 'Unknown';
+String _deviceId = 'Unknown';
   
 @override
 void initState() {
   super.initState();
-  initUniqueIdentifierState();
+  initDeviceState();
 }
 
-Future<void> initUniqueIdentifierState() async {
-  String identifier;
+Future<void> initDeviceState() async {
+  String deviceId;
 
   try {
-    identifier = await _deviceIdPlugin.getDeviceId() ??
-      'Unknown device id';
+    deviceId = await DeviceId.getId ?? 'Unknown device id';
   } on PlatformException {
-    identifier = 'Failed to get device id.';
+    deviceId = 'Failed to get device id.';
   }
 
   if (!mounted) return;
 
   setState(() {
-    _identifier = identifier;
+    _deviceId = deviceId;
   });
 }
 
@@ -57,7 +56,7 @@ Widget build(BuildContext context) {
         title: const Text('Device ID App'),
       ),
       body: Center(
-        child: Text('Device ID: $_identifier'),
+        child: Text('Device ID: $_deviceId'),
       ),
     ),
   );
