@@ -7,7 +7,7 @@ repository: https://github.com/cruvdev/device_id/
 issue_tracker: https://github.com/cruvdev/device_id/issues/
 
 environment:
-  sdk: ^3.5.1
+  sdk: ^3.4.4
   flutter: '>=3.3.0'
 
 dependencies:
